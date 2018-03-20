@@ -23,7 +23,7 @@ public class Airplane {
 		}
 	}
 	
-	public boolean putCustomerOnFirstAvailableWithSpecifiedType(Customer customer, ComfortType desiredComfortType) {
+	boolean putCustomerOnFirstAvailableWithSpecifiedType(Customer customer, ComfortType desiredComfortType) {
 
 		int startIndex;
 		int endIndex;
@@ -36,7 +36,7 @@ public class Airplane {
 			startIndex=5;
 		}
 		else {
-			startIndex=5;
+			startIndex = 5;
 		}
 		
 		endIndex = startIndex+5;
@@ -72,6 +72,11 @@ public class Airplane {
 			System.out.println("");
 		}
 		return false;
+	}
+
+	public List<Seat> getAllSeats() {
+		return seats;
+		
 	}
 	
 }
