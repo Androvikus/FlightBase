@@ -1,6 +1,7 @@
 package se.lexicon.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Airplane {
@@ -75,7 +76,7 @@ public class Airplane {
 	}
 
 	public List<Seat> getAllSeats() {
-		return seats;
+		return Collections.unmodifiableList(seats);
 		
 	}
 	
