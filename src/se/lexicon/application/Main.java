@@ -10,23 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
     	
-    	List<String> example = new ArrayList<>();
-    	example.add("Ett");
-    	example.add("Två");
-    	example.add("Tre");
-    	example.add("Fyra");
-    	
-//    	for(String text : example) {
-//    		if(text.equalsIgnoreCase("två")) example.remove(text);
-//    	}
-    	
-    	Iterator<String> it = example.iterator();
-    	while(it.hasNext()) {
-    		String current = it.next();
-    		if(current.equalsIgnoreCase("två")) it.remove();
-    	}
-    	
-    	example.forEach(System.out::println);
+
     	
     	
 //        SystemUI ui = new SystemUI();
