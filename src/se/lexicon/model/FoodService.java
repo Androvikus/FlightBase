@@ -47,4 +47,5 @@ public class FoodService {
 	public List<Dish> getDishByPredicate(Predicate<? super Dish> predicate){
 		return dishes.stream().filter(predicate).collect(Collectors.toList());
 	}
+	
 }
