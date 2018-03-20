@@ -11,10 +11,10 @@ public class Airplane {
 		super();
 		seats = new ArrayList<>(maxNrSeats);
 		this.maxNrSeats = maxNrSeats;
-		fillSeats();
+		createSeats();
 	}
 	
-	private void fillSeats() {
+	private void createSeats() {
 		for(int i=0; i<5; i++) {
 			seats.add(new Seat(ComfortType.BUSINESS, 20000));
 		}
@@ -46,7 +46,7 @@ public class Airplane {
 			//if the seat is available, take it, and stop looking
 			if(putCustomerOnDesiredSeatAndType(i, customer, desiredComfortType)) {
 				returnValue = true;
-				break;
+				break;//should go out of for-loop
 			}
 			//else mark the returnValue as false and keep looking
 			else {
@@ -65,7 +65,7 @@ public class Airplane {
 				return true;
 			}
 			else {
-				System.out.println("Seat is taken");
+				//System.out.println("Seat is taken");
 			}
 		}
 		catch (Exception e) {
