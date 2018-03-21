@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class FlightManager {
 	
-	Airplane airplane = new Airplane(10);
+	Airplane airplane = new Airplane();
 	FoodService foodService = new FoodService();//F�r matr�tter inskrivet
 	CountService countService = new CountService();
 	
@@ -28,13 +28,17 @@ public class FlightManager {
 			throw new IllegalArgumentException(
 					"Parameter customerToAdd must not be null.");
 		}
-		airplane.putCustomerOnFirstAvailableWithSpecifiedType(customerToAdd, desiredComfortType);
+		airplane.putCustomerOnDesiredSeatType(customerToAdd, desiredComfortType);
 	}
 	
 	
 	public List<Seat> getAllSeats()
 	{
 		return Collections.unmodifiableList(airplane.getSeats());
+	}
+	
+	public Seat getSeatAt(int index) {
+		return airplane.getSeats().get(index);
 	}
 	
 	//Food section
@@ -75,8 +79,13 @@ public class FlightManager {
 	public double getTotalFlightPrice(List<Seat> allSeats) {
 		return  countService.getFoodAndTicketSumPerFlight(allSeats);		
 	}
-	
-	
-	
 	//end food section
+	
+	//Count section
+	
+	public double countProfitPerFlight(List<Seat> seats) {
+		return countService.countProfitPerFlight(seats);
+	}
+	
+	//end count section
 }
