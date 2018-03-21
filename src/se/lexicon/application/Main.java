@@ -35,6 +35,10 @@ public class Main {
 //    	Customer c9 = new Customer();
 //    	Customer c10 = new Customer();
 //    	Customer c11 = new Customer();
+    
+    	
+    	
+    	
     	
     	
     	try 
@@ -53,10 +57,12 @@ public class Main {
 		}
     	System.out.println(fm.getAllSeats().size());
 		System.out.println(fm.getAllSeats().get(3).toString());//note: rewrite to show whole List content
-		fm.getAllSeats().remove(3);
+	//	fm.getAllSeats().remove(3);
 		System.out.println(fm.getAllSeats().size());
-    	
-    	
+		
+		
+		Airplane airplane = new Airplane(10);	
+		System.out.println(fm.getTotalFlightPrice(airplane.getSeats()));
     	
     	
     	

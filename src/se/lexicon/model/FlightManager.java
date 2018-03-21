@@ -15,7 +15,10 @@ import java.util.List;
 public class FlightManager {
 	
 	Airplane airplane = new Airplane(10);
-	FoodService foodService = new FoodService();//Får maträtter inskrivet
+	FoodService foodService = new FoodService();//Fï¿½r matrï¿½tter inskrivet
+	CountService countService = new CountService();
+	
+	
 	
 	
 	public void addCustomer(Customer customerToAdd, ComfortType desiredComfortType) throws Exception 
@@ -31,24 +34,24 @@ public class FlightManager {
 	
 	public List<Seat> getAllSeats()
 	{
-		return Collections.unmodifiableList(airplane.getAllSeats());
+		return Collections.unmodifiableList(airplane.getSeats());
 	}
 	
 	//Food section
 	public boolean assignDishToCustomer(Customer customer, Dish dish) {
-		for(Seat seat : airplane.getAllSeats()) {//TODO: förenkla sökning
-			System.out.println("Kollar säte " + seat);
+		for(Seat seat : airplane.getSeats()) {//TODO: fï¿½renkla sï¿½kning
+			System.out.println("Kollar sï¿½te " + seat);
 			if(seat.getCustomer().equals(customer)) {
 				System.out.println("Customer " + customer  + " equals " + seat.getCustomer());
 				if(foodService.getDishesByComfortType(seat.getComfortType()).contains(dish)) {
-					System.out.println("Dish " + dish + " återfanns i dishes med CT " + seat.getComfortType());
-					//Om föreslagen maträtt finns Bland alla maträtter som har samma ComfortType som kundens (sätes) ComfortType
-					//Då godkänns tilldelning
+					System.out.println("Dish " + dish + " ï¿½terfanns i dishes med CT " + seat.getComfortType());
+					//Om fï¿½reslagen matrï¿½tt finns Bland alla matrï¿½tter som har samma ComfortType som kundens (sï¿½tes) ComfortType
+					//Dï¿½ godkï¿½nns tilldelning
 					customer.setDish(dish);
 					return true;
 				}
 				else {
-					System.out.println("Dish återfanns ej");
+					System.out.println("Dish ï¿½terfanns ej");
 				}
 			}
 			else {
@@ -65,6 +68,12 @@ public class FlightManager {
 	public List<Dish> getAvailableDishes(){
 		return foodService.getAllDishes();
 	}
+	
+	public double getTotalFlightPrice(List<Seat> allSeats) {
+		return  countService.getFoodAndTicketSumPerFlight(allSeats);		
+	}
+	
+	
 	
 	//end food section
 }

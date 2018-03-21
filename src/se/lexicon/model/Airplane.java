@@ -75,7 +75,7 @@ public class Airplane {
 		return false;
 	}
 
-	public List<Seat> getAllSeats() {
+	public List<Seat> getSeats() {
 		return Collections.unmodifiableList(seats);
 		
 	}
