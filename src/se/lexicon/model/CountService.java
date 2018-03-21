@@ -5,8 +5,8 @@ import java.util.List;
 
 public class CountService {
 
-	private double foodAndTicketSum;
-	private double foodAndTicketSumPerCustomer;
+	private int foodAndTicketSum;
+	private int foodAndTicketSumPerCustomer;
 	private List<Seat> airplaneSeats;
 
 	public CountService() {
@@ -39,13 +39,13 @@ public class CountService {
 		foodAndTicketSumPerCustomer = dishPrice + ticketPrice;	
 	}
 
-	public double getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
+	public int getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
 		sumUpTotalTicketPrices(airplaneSeats);
 		
 		return foodAndTicketSum;
 	}
 
-	public double getTotalTicketAmount() {
+	public int getTotalTicketAmount() {
 		return foodAndTicketSumPerCustomer;
 	}
 	
