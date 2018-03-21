@@ -7,14 +7,13 @@ import java.util.List;
 
 public class Airplane {
 	private List<Seat> seats;
-	private int maxNrSeats;
+	private int maxNrSeats=10;
 	
 	/**
 	 * Also creates seats for the airplane
 	 * @param maxNrSeats
 	 */
 	public Airplane() {//maxNrSeats was before
-		super();
 		seats = new ArrayList<>(maxNrSeats);
 		//this.maxNrSeats = maxNrSeats;
 		createSeats();
