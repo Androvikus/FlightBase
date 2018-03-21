@@ -27,6 +27,7 @@ public class Test_180321 {
 
 	@Test
 	public void testAssignAvailableDishToCustomer() {
+		System.out.println(fm.getAllSeats().size());
 		Dish dish = fm.getAvailableDishes().get(0);
 		assertTrue(fm.assignDishToCustomer(cust, dish));
 	}

@@ -51,19 +51,10 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	try 
-    	{
-    		System.out.println(fm.getAllSeats().size());
-			System.out.println(fm.getAllSeats().get(3).toString());//note: rewrite to show whole List content
-			fm.getAllSeats().remove(3);
-			System.out.println(fm.getAllSeats().size());
-			
-		} 
-    	catch (ClassNotFoundException e) 
-    	{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	System.out.println(fm.getAllSeats().size());
+		System.out.println(fm.getAllSeats().get(3).toString());//note: rewrite to show whole List content
+		fm.getAllSeats().remove(3);
+		System.out.println(fm.getAllSeats().size());
     	
     	
     	
