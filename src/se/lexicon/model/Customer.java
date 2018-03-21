@@ -100,6 +100,7 @@ public class Customer {
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
+	 * Compares only firstName and id
 	 */
 	@Override
 	public boolean equals(Object obj) {

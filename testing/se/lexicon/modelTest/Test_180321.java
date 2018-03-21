@@ -13,20 +13,28 @@ import se.lexicon.model.FlightManager;
 public class Test_180321 {
 	
 	FlightManager fm;
-	Customer cust;
+	Customer cust, cust2;
 
 	@Before
 	public void setUp() throws Exception {
 		fm = new FlightManager();
 		cust = new Customer("Erik");
-		fm.addCustomer(cust, ComfortType.BUSINESS);//index 0
+		cust2 = new Customer("Mats");
+		fm.addCustomer(cust, ComfortType.BUSINESS);
+		fm.addCustomer(cust2, ComfortType.ECONOMY);
 	}
 	
 
 	@Test
-	public void testAssignAvailableDishToCustomer() {
+	public void testAssignAvailableBusinessDishToCustomer() {
 		Dish dish = fm.getAvailableDishes().get(0);
 		assertTrue(fm.assignDishToCustomer(cust, dish));
+	}
+	
+	@Test
+	public void testAssignAvailableEconomyDishToCustomer() {
+		Dish dish = fm.getAvailableDishes().get(3);
+		assertTrue(fm.assignDishToCustomer(cust2, dish));
 	}
 	
 	@Test
@@ -36,7 +44,21 @@ public class Test_180321 {
 	}
 	
 	@Test
-	public void testCountOneCustomerFlightPrice() {
+	public void testCountOneCustomerBusinessFlightPrice() {
+		//Take an existent dish
+		Dish dish = fm.getAvailableDishes().get(0);
+		//Fetch the placed customer
+		cust = fm.getSeatAt(0).getCustomer();
+		//Assign a dish to costumer
+		fm.assignDishToCustomer(cust, dish);//hoppas funkar
+		
+		int expectedPrice = FlightManager.BUSINESS_PRICE + dish.getPrice();
+		//assert that the price is as expected
+		assertTrue(expectedPrice == fm.getTotalFlightPrice(fm.getAllSeats()));
+	}
+	
+	@Test
+	public void testCountOneCustomerEconomyFlightPrice() {
 		//Take an existent dish
 		Dish dish = fm.getAvailableDishes().get(0);
 		//Fetch the placed customer
@@ -58,6 +80,9 @@ public class Test_180321 {
 		
 		
 		double expectedProfit = (FlightManager.BUSINESS_PRICE + dish.getPrice()) * 0.3;
+		
+		System.out.println(expectedProfit + " ---");
+		System.out.println(fm.countProfitPerFlight(fm.getAllSeats()) + " ---");
 		
 		assertTrue(expectedProfit == fm.countProfitPerFlight(fm.getAllSeats()));
 		

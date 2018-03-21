@@ -21,9 +21,11 @@ public class CountService {
 		int totalFoodPrice = 0;
 		while (seatIterator.hasNext()) {
 			Seat tempSeat = seatIterator.next();
-			if ((tempSeat.getCustomer() != null)) {
+			if (tempSeat.getCustomer() != null) {
 				totalPrice += tempSeat.getPrice();
-				totalFoodPrice += tempSeat.getCustomer().getDish().getPrice();
+				if(tempSeat.getCustomer().getDish() != null) {
+					totalFoodPrice += tempSeat.getCustomer().getDish().getPrice();
+				}
 			}
 		}
 		foodAndTicketSum = totalPrice + totalFoodPrice;
