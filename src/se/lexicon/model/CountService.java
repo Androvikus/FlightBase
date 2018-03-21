@@ -6,37 +6,47 @@ import java.util.List;
 public class CountService {
 
 	private double foodAndTicketSum;
-	private double totalTicketAmount;
+	private double foodAndTicketSumPerCustomer;
 	private List<Seat> airplaneSeats;
-	
-	private void sumUpTotalTicketPrices(List<Seat> airplaneSeats) {
-		
-	//Total sum every booked seat. Booked = has customer
-	Iterator<Seat> seatIterator = airplaneSeats.iterator();
-	int totalPrice = 0;
-	int totalFoodPrice = 0;
-	while (seatIterator.hasNext() && (seatIterator.next().getCustomer() != null)) {
-		totalPrice += seatIterator.next().getPrice();
-		totalFoodPrice += seatIterator.next().getCustomer().getDish().getPrice();
-		foodAndTicketSum = totalPrice + totalFoodPrice;
+
+	public CountService() {
+
 	}
+
+	public void sumUpTotalTicketPrices(List<Seat> airplaneSeats) {
+
+		//Total sum every booked seat. Booked = has customer
+		Iterator<Seat> seatIterator = airplaneSeats.iterator();
+		int totalPrice = 0;
+		int totalFoodPrice = 0;
+		while (seatIterator.hasNext()) {
+			Seat tempSeat = seatIterator.next();
+			if ((tempSeat.getCustomer() != null)) {
+				totalPrice += tempSeat.getPrice();
+				totalFoodPrice += tempSeat.getCustomer().getDish().getPrice();
+			}
+		}
+			foodAndTicketSum = totalPrice + totalFoodPrice;
+		}
 		
-	}
+
 	
 	private void sumOfTicketPriceAndFoodPricePerCustomer(Customer customer, Seat seat) {
 		int dishPrice;
 		int ticketPrice;
 		dishPrice = customer.getDish().getPrice();
 		ticketPrice = seat.getPrice();
-		totalTicketAmount = dishPrice + ticketPrice;	
+		foodAndTicketSumPerCustomer = dishPrice + ticketPrice;	
 	}
 
-	public double getFoodAndTicketSum() {
+	public double getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
+		sumUpTotalTicketPrices(airplaneSeats);
+		
 		return foodAndTicketSum;
 	}
 
 	public double getTotalTicketAmount() {
-		return totalTicketAmount;
+		return foodAndTicketSumPerCustomer;
 	}
 	
 	
