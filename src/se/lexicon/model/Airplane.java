@@ -8,6 +8,10 @@ public class Airplane {
 	private List<Seat> seats;
 	private int maxNrSeats;
 	
+	/**
+	 * Also creates seats for the airplane
+	 * @param maxNrSeats
+	 */
 	public Airplane(int maxNrSeats) {
 		super();
 		seats = new ArrayList<>(maxNrSeats);

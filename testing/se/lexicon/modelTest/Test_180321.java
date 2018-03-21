@@ -20,7 +20,6 @@ public class Test_180321 {
 		fm = new FlightManager();
 		cust = new Customer("Erik");
 		fm.addCustomer(cust, ComfortType.BUSINESS);//index 0
-		
 	}
 	
 
@@ -36,5 +35,7 @@ public class Test_180321 {
 		Dish dish = new Dish(ComfortType.ECONOMY, "Linssoppa", "description", 100);
 		assertFalse(fm.assignDishToCustomer(cust, dish));
 	}
+	
+	
 
 }
