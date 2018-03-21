@@ -26,10 +26,10 @@ public class CountService {
 				totalFoodPrice += tempSeat.getCustomer().getDish().getPrice();
 			}
 		}
-			foodAndTicketSum = totalPrice + totalFoodPrice;
-		}
-		
-	
+		foodAndTicketSum = totalPrice + totalFoodPrice;
+	}
+
+
 	private void sumOfTicketPriceAndFoodPricePerCustomer(Seat seat) {
 		int dishPrice;
 		int ticketPrice;
@@ -37,28 +37,25 @@ public class CountService {
 		ticketPrice = seat.getPrice();
 		foodAndTicketSumPerCustomer = dishPrice + ticketPrice;	
 	}
-	
+
+
 	public double countProfitPerFlight (List <Seat> airplaneSeats) {
 		//double profit;
 		//profit 
-		
+
 		return (double) (getFoodAndTicketSumPerFlight(airplaneSeats))*0.3;
-			
+
 	}
-	
-	
-	
-// göra om till integer?
+
 	public int getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
 		sumUpTotalTicketPrices(airplaneSeats);
-		
+
 		return foodAndTicketSum;
 	}
-// ändra namn?
+
+	
 	public int getFoodAndTicketSumPerCustomer() {
+
 		return foodAndTicketSumPerCustomer;
 	}
-	
-	
-	
 }
