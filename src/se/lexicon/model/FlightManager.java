@@ -39,9 +39,11 @@ public class FlightManager {
 	
 	//Food section
 	public boolean assignDishToCustomer(Customer customer, Dish dish) {
+
 		for(Seat seat : airplane.getSeats()) {//TODO: f�renkla s�kning
 			System.out.println("Kollar s�te " + seat);
-			if(seat.getCustomer().equals(customer)) {
+			if(seat.getCustomer()!=null && seat.getCustomer().equals(customer)) {
+
 				System.out.println("Customer " + customer  + " equals " + seat.getCustomer());
 				if(foodService.getDishesByComfortType(seat.getComfortType()).contains(dish)) {
 					System.out.println("Dish " + dish + " �terfanns i dishes med CT " + seat.getComfortType());
@@ -58,6 +60,7 @@ public class FlightManager {
 				System.out.println("Customer " + customer + " ej equals " + seat.getCustomer());
 			}
 		}
+		System.out.println("Ska returnera false");
 		return false;
 	}
 	

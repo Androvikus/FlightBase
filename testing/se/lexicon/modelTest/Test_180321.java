@@ -27,10 +27,14 @@ public class Test_180321 {
 
 	@Test
 	public void testAssignAvailableDishToCustomer() {
-		System.out.println("Hej");
-		System.out.println(fm.getAllSeats().size());
 		Dish dish = fm.getAvailableDishes().get(0);
 		assertTrue(fm.assignDishToCustomer(cust, dish));
+	}
+	
+	@Test
+	public void testAssignUnavailableDishToCustomer() {
+		Dish dish = new Dish(ComfortType.ECONOMY, "Linssoppa", "description", 100);
+		assertFalse(fm.assignDishToCustomer(cust, dish));
 	}
 
 }
