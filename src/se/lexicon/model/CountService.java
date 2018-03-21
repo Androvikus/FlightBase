@@ -38,6 +38,15 @@ public class CountService {
 		foodAndTicketSumPerCustomer = dishPrice + ticketPrice;	
 	}
 	
+	public double countProfitPerFlight (List <Seat> airplaneSeats) {
+		//double profit;
+		//profit 
+		
+		return (double) (getFoodAndTicketSumPerFlight(airplaneSeats))*0.3;
+			
+	}
+	
+	
 	
 // göra om till integer?
 	public int getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
