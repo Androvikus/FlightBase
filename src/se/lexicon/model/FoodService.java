@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class FoodService {
 	
-	private List<Dish> dishes;
+	private List<Dish> dishes = new ArrayList<>();
 
 	public FoodService() {
 		super();
