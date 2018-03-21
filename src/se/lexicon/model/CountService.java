@@ -5,8 +5,8 @@ import java.util.List;
 
 public class CountService {
 
-	private double foodAndTicketSum;
-	private double foodAndTicketSumPerCustomer;
+	private int foodAndTicketSum;
+	private int foodAndTicketSumPerCustomer;
 	private List<Seat> airplaneSeats;
 
 	public CountService() {
@@ -40,13 +40,13 @@ public class CountService {
 	
 	
 // göra om till integer?
-	public double getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
+	public int getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
 		sumUpTotalTicketPrices(airplaneSeats);
 		
 		return foodAndTicketSum;
 	}
 // ändra namn?
-	public double getTotalTicketAmount() {
+	public int getFoodAndTicketSumPerCustomer() {
 		return foodAndTicketSumPerCustomer;
 	}
 	
