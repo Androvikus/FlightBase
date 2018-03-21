@@ -29,22 +29,23 @@ public class CountService {
 			foodAndTicketSum = totalPrice + totalFoodPrice;
 		}
 		
-
 	
-	private void sumOfTicketPriceAndFoodPricePerCustomer(Customer customer, Seat seat) {
+	private void sumOfTicketPriceAndFoodPricePerCustomer(Seat seat) {
 		int dishPrice;
 		int ticketPrice;
-		dishPrice = customer.getDish().getPrice();
+		dishPrice = seat.getCustomer().getDish().getPrice();
 		ticketPrice = seat.getPrice();
 		foodAndTicketSumPerCustomer = dishPrice + ticketPrice;	
 	}
-
+	
+	
+// göra om till integer?
 	public double getFoodAndTicketSumPerFlight(List<Seat> airplaneSeats) {
 		sumUpTotalTicketPrices(airplaneSeats);
 		
 		return foodAndTicketSum;
 	}
-
+// ändra namn?
 	public double getTotalTicketAmount() {
 		return foodAndTicketSumPerCustomer;
 	}
