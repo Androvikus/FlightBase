@@ -15,10 +15,11 @@ import java.util.List;
 public class FlightManager {
 	
 	Airplane airplane = new Airplane();
-	FoodService foodService = new FoodService();//F�r matr�tter inskrivet
+	FoodService foodService = new FoodService();//Far matratter inskrivet
 	CountService countService = new CountService();
 	
-	
+	public final static int BUSINESS_PRICE = 20000;
+	public final static int ECONOMY_PRICE = 5000;
 	
 	
 	public void addCustomer(Customer customerToAdd, ComfortType desiredComfortType) throws Exception 
@@ -44,20 +45,20 @@ public class FlightManager {
 	//Food section
 	public boolean assignDishToCustomer(Customer customer, Dish dish) {
 
-		for(Seat seat : airplane.getSeats()) {//TODO: f�renkla s�kning
-			System.out.println("Kollar s�te " + seat);
+		for(Seat seat : airplane.getSeats()) {//TODO: forenkla sokning
+			System.out.println("Kollar sate " + seat);
 			if(seat.getCustomer()!=null && seat.getCustomer().equals(customer)) {
 
 				System.out.println("Customer " + customer  + " equals " + seat.getCustomer());
 				if(foodService.getDishesByComfortType(seat.getComfortType()).contains(dish)) {
-					System.out.println("Dish " + dish + " �terfanns i dishes med CT " + seat.getComfortType());
-					//Om f�reslagen matr�tt finns Bland alla matr�tter som har samma ComfortType som kundens (s�tes) ComfortType
-					//D� godk�nns tilldelning
+					System.out.println("Dish " + dish + " aterfanns i dishes med CT " + seat.getComfortType());
+					//Om foreslagen matratt finns Bland alla matratter som har samma ComfortType som kundens (sates) ComfortType
+					//Da godkanns tilldelning
 					customer.setDish(dish);
 					return true;
 				}
 				else {
-					System.out.println("Dish �terfanns ej");
+					System.out.println("Dish aterfanns ej");
 				}
 			}
 			else {

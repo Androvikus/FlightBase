@@ -61,7 +61,7 @@ public class Main {
 		System.out.println(fm.getAllSeats().size());
 		
 		
-		Airplane airplane = new Airplane(10);	
+		Airplane airplane = new Airplane();	
 		System.out.println(fm.getTotalFlightPrice(airplane.getSeats()));
     	
     	
