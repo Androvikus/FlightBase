@@ -19,6 +19,14 @@ public class Customer {
 		id = customerCount;
 	}
 	
+	public Customer(String firstName, String surname) {
+		customerCount++;
+		this.firstName = firstName;
+		Surname = surname;
+		this.dish = null;
+		id = customerCount;
+	}
+	
 	public Customer(String firstName, String surname, Dish dish) {
 		customerCount++;
 		this.firstName = firstName;
