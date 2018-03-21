@@ -9,6 +9,7 @@ import se.lexicon.model.Airplane;
 import se.lexicon.model.ComfortType;
 import se.lexicon.model.Customer;
 import se.lexicon.model.FlightManager;
+import se.lexicon.model.FoodService;
 import se.lexicon.model.Seat;
 import se.lexicon.ui.SystemUI;
 
@@ -20,10 +21,10 @@ public class Main {
     	//test area
     	
     	FlightManager fm = new FlightManager();//Airplane plan1 = new Airplane(10);
+    	FoodService fs = new FoodService();
     	
     	
-    	
-    	Customer c1 = new Customer();
+    	Customer c1 = new Customer("Kalle","Blomkvist", null);
     	Customer c2 = new Customer();
     	Customer c3 = new Customer();
     	Customer c4 = new Customer();
