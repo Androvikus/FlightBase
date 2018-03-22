@@ -21,7 +21,6 @@ public class Test_180321 {
 		cust = new Customer("Erik");
 		cust2 = new Customer("Mats");
 		fm.addCustomer(cust, ComfortType.BUSINESS);
-		fm.addCustomer(cust2, ComfortType.ECONOMY);
 	}
 	
 
@@ -33,8 +32,18 @@ public class Test_180321 {
 	
 	@Test
 	public void testAssignAvailableEconomyDishToCustomer() {
-		Dish dish = fm.getAvailableDishes().get(3);
-		assertTrue(fm.assignDishToCustomer(cust2, dish));
+		
+		try {
+			fm.addCustomer(cust2, ComfortType.ECONOMY);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Dish dish2 = fm.getAvailableDishes().get(3);
+		cust2 = fm.getSeatAt(5).getCustomer();		
+		
+		assertTrue(fm.assignDishToCustomer(cust2, dish2));
 	}
 	
 	@Test
@@ -66,20 +75,35 @@ public class Test_180321 {
 		//Assign a dish to costumer
 		fm.assignDishToCustomer(cust, dish);//hoppas funkar
 		
+
+		
 		int expectedPrice = FlightManager.BUSINESS_PRICE + dish.getPrice();
 		//assert that the price is as expected
 		assertTrue(expectedPrice == fm.getTotalFlightPrice(fm.getAllSeats()));
 	}
 	
 	@Test
-	public void testProfitFromOneCustomerAmount() {
+	public void testProfitFromAllCustomerAmount() {
+		
+		try {
+			fm.addCustomer(cust2, ComfortType.ECONOMY);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		Dish dish = fm.getAvailableDishes().get(0);
 		cust = fm.getSeatAt(0).getCustomer();
 		fm.assignDishToCustomer(cust, dish);
 		
+		Dish dish2 = fm.getAvailableDishes().get(3);
+		cust2 = fm.getSeatAt(5).getCustomer();
+		fm.assignDishToCustomer(cust2, dish2);//hoppas funkar
+		
 		
 		
 		double expectedProfit = (FlightManager.BUSINESS_PRICE + dish.getPrice()) * 0.3;
+		expectedProfit += (FlightManager.ECONOMY_PRICE + dish2.getPrice()) * 0.3;
 		
 		System.out.println(expectedProfit + " ---");
 		System.out.println(fm.countProfitPerFlight(fm.getAllSeats()) + " ---");

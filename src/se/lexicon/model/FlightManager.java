@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -36,6 +37,10 @@ public class FlightManager {
 	public List<Seat> getAllSeats()
 	{
 		return Collections.unmodifiableList(airplane.getSeats());
+	}
+	
+	public List<Seat> getSeatsByComfortType(ComfortType comfortType){
+		return airplane.getSeats().stream().filter(s -> s.getComfortType() == comfortType).collect(Collectors.toList());
 	}
 	
 	public Seat getSeatAt(int index) {
