@@ -4,6 +4,7 @@ public class Seat {
 	private Customer customer;
 	private ComfortType comfortType;
 	private int price;
+	private int seatNumber;
 	
 //	public Seat(Customer customer, ComfortType comfortType, int price) {
 //		super();
