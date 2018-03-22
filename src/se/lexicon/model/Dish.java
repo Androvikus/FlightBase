@@ -85,13 +85,9 @@ public class Dish {
 	 */
 	@Override
 	public String toString() {
-		return  title + " description " + " price "
-				+ " price ";
+		return  title + "  description  "+ " price  "
+				+ price ;
 	}
-	
-	
-	
-	
 	
 	
 }
