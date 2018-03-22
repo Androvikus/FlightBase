@@ -33,6 +33,10 @@ public class FlightManager {
 		return airplane.putCustomerOnDesiredSeatType(customerToAdd, desiredComfortType);
 	}
 	
+	public boolean canAddCustomer(ComfortType desiredComfortType) {
+		return airplane.canPutCustomerOnDesiredSeatType(desiredComfortType);
+	}
+	
 	
 	public List<Seat> getAllSeats()
 	{
