@@ -82,12 +82,17 @@ public class FlightManager {
 		return foodService.getAllDishes();
 	}
 	
-	public double getTotalFlightPrice(List<Seat> allSeats) {
-		return  countService.getFoodAndTicketSumPerFlight(allSeats);		
+	public List<Dish> getAvailableDishesByComfortType(ComfortType comfortType){
+		return foodService.getDishesByComfortType(comfortType);
 	}
+
 	//end food section
 	
 	//Count section
+	
+	public double getTotalFlightPrice(List<Seat> allSeats) {
+		return  countService.getFoodAndTicketSumPerFlight(allSeats);		
+	}
 	
 	public double countProfitPerFlight(List<Seat> seats) {
 		return countService.countProfitPerFlight(seats);

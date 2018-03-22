@@ -93,11 +93,11 @@ public class Test_180321 {
 		}
 		
 		Dish dish = fm.getAvailableDishes().get(0);
-		cust = fm.getSeatAt(0).getCustomer();
+		cust = fm.getSeatsByComfortType(ComfortType.BUSINESS).get(0).getCustomer();
 		fm.assignDishToCustomer(cust, dish);
 		
 		Dish dish2 = fm.getAvailableDishes().get(3);
-		cust2 = fm.getSeatAt(5).getCustomer();
+		cust2 = fm.getSeatsByComfortType(ComfortType.ECONOMY).get(0).getCustomer();
 		fm.assignDishToCustomer(cust2, dish2);//hoppas funkar
 		
 		
@@ -109,7 +109,6 @@ public class Test_180321 {
 		System.out.println(fm.countProfitPerFlight(fm.getAllSeats()) + " ---");
 		
 		assertTrue(expectedProfit == fm.countProfitPerFlight(fm.getAllSeats()));
-		
 	}
 	
 
