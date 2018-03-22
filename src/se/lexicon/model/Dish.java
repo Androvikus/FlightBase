@@ -85,8 +85,8 @@ public class Dish {
 	 */
 	@Override
 	public String toString() {
-		return "Dish [comfortType=" + comfortType + ", title=" + title + ", description=" + description + ", price="
-				+ price + "]";
+		return  title + " description " + " price "
+				+ " price ";
 	}
 	
 	

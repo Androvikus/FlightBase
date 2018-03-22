@@ -11,13 +11,13 @@ public class FoodService {
 
 	public FoodService() {
 		super();
-		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote med svamp", "Stekt av mästerkock", 345);
-		Dish dish2 = new Dish(ComfortType.BUSINESS, "Kolja med rysk kaviar", "Kaviar från svarta marknaden", 359);
-		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finsk rotfruktslåda, eko", "Handplockade rotfrukter", 375);
+		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote med svamp", "Stekt av mï¿½sterkock", 345);
+		Dish dish2 = new Dish(ComfortType.BUSINESS, "Kolja med rysk kaviar", "Kaviar frï¿½n svarta marknaden", 359);
+		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finsk rotfruktslï¿½da, eko", "Handplockade rotfrukter", 375);
 		
 		Dish dish_e1 = new Dish(ComfortType.ECONOMY, "Hamburgare med pommes frites", "Simple and fast", 115);
-		Dish dish_e2 = new Dish(ComfortType.ECONOMY, "Fiskgratäng med mos", "En lagom måltid", 110);
-		Dish dish_e3 = new Dish(ComfortType.ECONOMY, "Pannkakor med sylt", "Sylt med låg sockerhalt", 95);
+		Dish dish_e2 = new Dish(ComfortType.ECONOMY, "Fiskgratï¿½ng med mos", "En lagom mï¿½ltid", 110);
+		Dish dish_e3 = new Dish(ComfortType.ECONOMY, "Pannkakor med sylt", "Sylt med lï¿½g sockerhalt", 95);
 		
 		dishes.add(dish1);
 		dishes.add(dish2);
@@ -43,9 +43,10 @@ public class FoodService {
 		return dishes.stream().filter(d -> d.comfortType == comfortType).collect(Collectors.toList());
 	}
 	
-	//Ska kunna söka ut dishes på valfritt vilkor... ej testad
+	//Ska kunna sï¿½ka ut dishes pï¿½ valfritt vilkor... ej testad
 	public List<Dish> getDishByPredicate(Predicate<? super Dish> predicate){
 		return dishes.stream().filter(predicate).collect(Collectors.toList());
 	}
+	
 	
 }
