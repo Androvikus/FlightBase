@@ -2,11 +2,63 @@ package se.lexicon.ui;
 
 import java.util.Scanner;
 
-public class SystemUI {
+import se.lexicon.model.FlightManager;
+import se.lexicon.model.UIScannerGuard;
 
+public class SystemUI {
+	private FlightManager fm;
+	Scanner scanner;
+	UIScannerGuard scannerGuard;
+	
+	
 	// Start the applications UI
 	public void start() {
-
+		fm = new FlightManager();
+		scannerGuard = new UIScannerGuard();
+	
+		
+		//Meny
+		int choice = 0;
+		int subChoice = 0;
+		
+		System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System");
+		choice = scannerGuard.readInt("Ange en siffra: ");
+		
+		switch(choice) {
+		case 1:
+			System.out.println("Test: Valt att boka");
+			try 
+			{
+				//subChoice = garageUI.chooseVehicleTypeMenu(garageUI.scannerGuard);
+			} 
+			catch (Exception e1) 
+			{
+				System.out.println("error in Booking System, please try later");
+			}
+			break;
+		case 2:
+			break;
+		}
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*
 		// Loop-condition
 		boolean isRunning = true;
 
@@ -19,16 +71,20 @@ public class SystemUI {
 				// Inner loop error handling
 				try {
 
-					System.out.println("User input : ");
+					System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System");
 					String keyboard = scanner.next();
 
 					switch (keyboard) {
 
-						case "0":
+						case "1":
+							System.out.println("Enter firstname:");
+							isRunning = false;
+							break;
+						case "2":
 							System.out.println("Exiting program...");
 							isRunning = false;
 							break;
-
+							
 						default:
 							System.out.println(keyboard + " is not a valid option. Please try again.");
 
@@ -53,7 +109,7 @@ public class SystemUI {
 			// The scanner auto-closes so don't worry about that.
 
 		}
-
+*/
 	}
 
-}
+
