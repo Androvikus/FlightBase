@@ -32,26 +32,40 @@ public class SystemUI {
 			try 
 			{
 				boolean redo=false;
+				boolean businessClassFull = false;
+				boolean economyClassFull = false;
+				String firstname = enterFirstname(scannerGuard);
+				String Surname = enterSurname(scannerGuard);
+				comfortType = enterComfortType(scannerGuard);
 				do {
-					
-					String firstname = enterFirstname(scannerGuard);
-					String Surname = enterSurname(scannerGuard);
-					comfortType = enterComfortType(scannerGuard);
 					Dish dish = chooseDish(scannerGuard);
 					
-					if(fm.addCustomer(new Customer(firstname,Surname,dish), comfortType)){
+					if(fm.canAddCustomer(comfortType)) {
+						//summary comfirm
 						
+						//add
+						fm.addCustomer(new Customer(firstname,Surname,dish), comfortType);
 					}
 					else {
+						//get another comfort type
 						ComfortType otherComfortType = (comfortType==ComfortType.BUSINESS)?ComfortType.ECONOMY:ComfortType.BUSINESS;
 						String do_redo = scannerGuard.readLine("Do you want to search for " + otherComfortType + " (y/*)? ");
-						
+					
+						if(comfortType==ComfortType.BUSINESS) {
+							businessClassFull=true;
+						}
+						if(comfortType==ComfortType.ECONOMY) {
+							economyClassFull=true;
+						}
 						if(do_redo.equalsIgnoreCase("y")) {
 							redo=true;
+							comfortType = otherComfortType;
 						}
+						
+						//mark status
 					}
 					
-				}while(redo);
+				}while(redo || (!businessClassFull || !economyClassFull));
 				}
 			 
 			catch (Exception e1) 
