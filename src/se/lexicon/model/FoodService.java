@@ -11,13 +11,13 @@ public class FoodService {
 
 	public FoodService() {
 		super();
-		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote med svamp", "Stekt av m�sterkock", 345);
-		Dish dish2 = new Dish(ComfortType.BUSINESS, "Kolja med rysk kaviar", "Kaviar fr�n svarta marknaden", 359);
-		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finsk rotfruktsl�da, eko", "Handplockade rotfrukter", 375);
+		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote with sponge", "Fried by master chef", 345);
+		Dish dish2 = new Dish(ComfortType.BUSINESS, "Haddock", "With Russian caviar from the Black Sea", 359);
+		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finnish rotfruit box, eco", "Hand picked root vegetables", 375);
 		
-		Dish dish_e1 = new Dish(ComfortType.ECONOMY, "Hamburgare med pommes frites", "Simple and fast", 115);
-		Dish dish_e2 = new Dish(ComfortType.ECONOMY, "Fiskgrat�ng med mos", "En lagom m�ltid", 110);
-		Dish dish_e3 = new Dish(ComfortType.ECONOMY, "Pannkakor med sylt", "Sylt med l�g sockerhalt", 95);
+		Dish dish_e1 = new Dish(ComfortType.ECONOMY, "Hamburger with stripes", "Simple and fast", 115);
+		Dish dish_e2 = new Dish(ComfortType.ECONOMY, "Fish gratin with mashed potatoes", "A neat meal", 110);
+		Dish dish_e3 = new Dish(ComfortType.ECONOMY, "Pancakes with jam", "A low carb jam", 95);
 		
 		dishes.add(dish1);
 		dishes.add(dish2);
