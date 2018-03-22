@@ -23,14 +23,14 @@ public class FlightManager {
 	public final static int ECONOMY_PRICE = 5000;
 	
 	
-	public void addCustomer(Customer customerToAdd, ComfortType desiredComfortType) throws Exception 
+	public boolean addCustomer(Customer customerToAdd, ComfortType desiredComfortType) throws Exception 
 	{
 		if (customerToAdd == null) 
 		{
 			throw new IllegalArgumentException(
 					"Parameter customerToAdd must not be null.");
 		}
-		airplane.putCustomerOnDesiredSeatType(customerToAdd, desiredComfortType);
+		return airplane.putCustomerOnDesiredSeatType(customerToAdd, desiredComfortType);
 	}
 	
 	

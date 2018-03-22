@@ -2,20 +2,22 @@ package se.lexicon.ui;
 
 import java.util.Scanner;
 
+import se.lexicon.exception.ExampleException;
+import se.lexicon.model.ComfortType;
+import se.lexicon.model.Customer;
+import se.lexicon.model.Dish;
 import se.lexicon.model.FlightManager;
 import se.lexicon.model.UIScannerGuard;
 
 public class SystemUI {
-	private FlightManager fm;
+	private FlightManager fm = new FlightManager();
 	Scanner scanner;
-	UIScannerGuard scannerGuard;
-	
+	UIScannerGuard scannerGuard = new UIScannerGuard();
+	ComfortType comfortType;
+	Customer customer = new Customer();
 	
 	// Start the applications UI
 	public void start() {
-		fm = new FlightManager();
-		scannerGuard = new UIScannerGuard();
-	
 		
 		//Meny
 		int choice = 0;
@@ -26,25 +28,123 @@ public class SystemUI {
 		
 		switch(choice) {
 		case 1:
-			System.out.println("Test: Valt att boka");
+			//System.out.println("Choose comfort type");
 			try 
 			{
-				//subChoice = garageUI.chooseVehicleTypeMenu(garageUI.scannerGuard);
-			} 
+				boolean redo=false;
+				do {
+					
+					String firstname = enterFirstname(scannerGuard);
+					String Surname = enterSurname(scannerGuard);
+					comfortType = enterComfortType(scannerGuard);
+					Dish dish = chooseDish(scannerGuard);
+					
+					if(fm.addCustomer(new Customer(firstname,Surname,dish), comfortType)){
+						
+					}
+					else {
+						ComfortType otherComfortType = (comfortType==ComfortType.BUSINESS)?ComfortType.ECONOMY:ComfortType.BUSINESS;
+						String do_redo = scannerGuard.readLine("Do you want to search for " + otherComfortType + " (y/*)? ");
+						
+						if(do_redo.equalsIgnoreCase("y")) {
+							redo=true;
+						}
+					}
+					
+				}while(redo);
+				}
+			 
 			catch (Exception e1) 
 			{
-				System.out.println("error in Booking System, please try later");
+				System.out.println("");
 			}
-			break;
-		case 2:
+ 		case 2:
 			break;
 		}
+	}
+
+
+	private Dish chooseDish(UIScannerGuard scannerGuard) {
+		System.out.println("Choose Dish");
+		
+		
+		
+		if(comfortType != null && comfortType != ComfortType.BUSINESS) {
+			//fm.getAvailableDishesByComfortType(ComfortType.ECONOMY)
+			int count=1;
+			for(Dish dish : fm.getAvailableDishesByComfortType(ComfortType.ECONOMY)) {
+				System.out.println(count + ": " + dish);
+				count++;
+			}
+		}
+		else if(comfortType != null && comfortType != ComfortType.ECONOMY) {
+			int count=1;
+			for(Dish dish : fm.getAvailableDishesByComfortType(ComfortType.BUSINESS)) {
+				System.out.println(count + ": " + dish);
+				count++;
+			}
+		}
+		
+		int choice = scannerGuard.readInt("Ange en siffra: ");
+		
+		
+		
+		return fm.getAvailableDishesByComfortType(comfortType).get(choice-1);
+	}
+
+
+	private String enterSurname(UIScannerGuard scannerGuard) {
+		System.out.println("Enter your Surname");
+		String surname = scannerGuard.readLine("");
+		return surname;
+	}
+
+
+	private String enterFirstname(UIScannerGuard scannerGuard) {
+		System.out.println("Enter your Firstname");
+		String firstname = scannerGuard.readLine("");
+		return firstname;
+	}
+
+
+	private ComfortType enterComfortType(UIScannerGuard scannerGuard) throws ExampleException {
+		
+		int choice = 0;
+		choice = scannerGuard.readInt("Choose comfort type \n" + "1. Business Class \n" + "2. Economy Class");
+		if(choice == 1) {
+			comfortType = ComfortType.BUSINESS;
+			 
+		}
+		else if(choice == 2) {
+			comfortType = ComfortType.ECONOMY;
+			
+		}
+		else {
+			System.out.println("You have entered the wrong number, please enter number 1 or 2");
+		}
+		return comfortType;
 	}
 		
 		
 		
 		
-		
+	/*
+	switch(choice) {
+		case 1:
+			//System.out.println("Choose comfort type");
+			try 
+			{
+				comfortType = enterComfortType(scannerGuard);
+			} 
+			catch (Exception e1) 
+			{
+				System.out.println("");
+			}
+			break;
+		case 2:
+			break;
+		}	
+	 */
 		
 		
 		
