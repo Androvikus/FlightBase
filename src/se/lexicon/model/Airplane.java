@@ -104,5 +104,16 @@ public class Airplane {
 	public List<Seat> getSeats() {
 		return Collections.unmodifiableList(seats);
 	}
+
+	public boolean canPutCustomerOnDesiredSeatType(ComfortType desiredComfortType) {
+		Iterator<Seat> ite = seats.iterator();
+		while(ite.hasNext()) {
+			Seat tempSeat = ite.next();
+			if(tempSeat.getComfortType() == desiredComfortType && tempSeat.getCustomer() == null) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }
