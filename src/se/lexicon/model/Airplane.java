@@ -8,6 +8,8 @@ import java.util.List;
 public class Airplane {
 	private List<Seat> seats;
 	private int maxNrSeats=10;
+	private int numberOfBusinessSeats=1;
+	private int numberOfEconomySeats=1;
 	
 	/**
 	 * Also creates seats for the airplane
@@ -16,15 +18,20 @@ public class Airplane {
 	public Airplane() {//maxNrSeats was before
 		seats = new ArrayList<>(maxNrSeats);
 		//this.maxNrSeats = maxNrSeats;
-		createSeats();
+		createSeats(numberOfBusinessSeats,numberOfEconomySeats);
 	}
 	
-	//Create seats
-	private void createSeats() {
-		for(int i=0; i<1; i++) {
+	public Airplane(int nrOfBusinessSeats, int nrOfEconomySeats) {
+		seats = new ArrayList<>(nrOfBusinessSeats + nrOfEconomySeats);
+		createSeats(nrOfBusinessSeats, nrOfEconomySeats);
+	}
+	
+	
+	private void createSeats(int nrOfBusinessSeats, int nrOfEconomySeats) {
+		for(int i=0; i<nrOfBusinessSeats; i++) {
 			seats.add(new Seat(ComfortType.BUSINESS));
 		}
-		for(int i=0; i<1; i++) {
+		for(int i=0; i<nrOfEconomySeats; i++) {
 			seats.add(new Seat(ComfortType.ECONOMY));
 		}
 	}
