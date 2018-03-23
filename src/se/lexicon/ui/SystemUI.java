@@ -46,7 +46,6 @@ public class SystemUI {
 					Dish dish = chooseDish(scannerGuard);
 					
 					if(fm.canAddCustomer(comfortType)) {
-						System.out.println("YEEEEEEEEEES");
 						Customer newCustomer = new Customer(firstname, Surname, dish);
 						//summary comfirm
 						
