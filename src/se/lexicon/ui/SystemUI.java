@@ -49,12 +49,14 @@ public class SystemUI {
 						//add
 						System.out.println("Summary:\n");
 						fm.presentReceipt(newCustomer, comfortType, new Seat(comfortType));
-						fm.addCustomer(newCustomer, comfortType);
+						if(scannerGuard.readLine("Do you want to proceed (y/*)? ")=="y") {
+							fm.addCustomer(newCustomer, comfortType);
+						}
 					}
 					else {
 						//get another comfort type
 						ComfortType otherComfortType = (comfortType==ComfortType.BUSINESS)?ComfortType.ECONOMY:ComfortType.BUSINESS;
-						String do_redo = scannerGuard.readLine("Do you want to search for " + otherComfortType + " (y/*)? ");
+						String do_redo = scannerGuard.readLine("Do you want to search for " + otherComfortType + " (y/*) ? ");
 					
 						if(comfortType==ComfortType.BUSINESS) {
 							businessClassFull=true;
