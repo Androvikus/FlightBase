@@ -47,7 +47,7 @@ public class FlightManager {
 	}
 	
 	public int getNumberOfAvailableSeats() {
-		return getNumberOfSeats() - getNumberOfSeats();
+		return getNumberOfSeats() - getNumberOfCustomers();
 	}
 	
 	public List<Seat> getSeatsByComfortType(ComfortType comfortType){
