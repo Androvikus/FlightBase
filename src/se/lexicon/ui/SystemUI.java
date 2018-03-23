@@ -25,7 +25,10 @@ public class SystemUI {
 		int choice = 0;
 		int subChoice = 0;
 		
-		System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System");
+		System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System \n");
+		
+		System.out.println("Number of occupied seats are: " + fm.getNumberOfAvailableSeats());
+		
 		choice = scannerGuard.readInt("Ange en siffra: ");
 		
 		switch(choice) {
