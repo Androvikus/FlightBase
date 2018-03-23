@@ -50,7 +50,7 @@ public class SystemUI {
 						//summary comfirm
 						
 						Dish dish = chooseDish(scannerGuard);
-						fm.assignDishToCustomer(newCustomer, dish);
+						fm.assignDishToCustomerWithComfortType(newCustomer, dish, comfortType);
 						
 						//add
 						System.out.println("Summary:\n");
