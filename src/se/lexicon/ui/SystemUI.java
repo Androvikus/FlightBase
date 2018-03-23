@@ -43,11 +43,14 @@ public class SystemUI {
 				String Surname = enterSurname(scannerGuard);
 				comfortType = enterComfortType(scannerGuard);
 				do {
-					Dish dish = chooseDish(scannerGuard);
+					
 					
 					if(fm.canAddCustomer(comfortType)) {
-						Customer newCustomer = new Customer(firstname, Surname, dish);
+						Customer newCustomer = new Customer(firstname, Surname);
 						//summary comfirm
+						
+						Dish dish = chooseDish(scannerGuard);
+						fm.assignDishToCustomer(newCustomer, dish);
 						
 						//add
 						System.out.println("Summary:\n");
