@@ -11,7 +11,7 @@ public class FoodService {
 
 	public FoodService() {
 		super();
-		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote with sponge", "Fried by master chef", 345);
+		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote with mushroom", "Fried by master chef", 345);
 		Dish dish2 = new Dish(ComfortType.BUSINESS, "Haddock", "With Russian caviar from the Black Sea", 359);
 		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finnish rotfruit box, eco", "Hand picked root vegetables", 375);
 		
