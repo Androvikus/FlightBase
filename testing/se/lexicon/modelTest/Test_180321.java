@@ -2,6 +2,8 @@ package se.lexicon.modelTest;
 
 import static org.junit.Assert.*;
 
+import java.awt.print.Book;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -109,6 +111,26 @@ public class Test_180321 {
 		System.out.println(fm.countProfitPerFlight(fm.getAllSeats()) + " ---");
 		
 		assertTrue(expectedProfit == fm.countProfitPerFlight(fm.getAllSeats()));
+	}
+	
+	@Test
+	public void assert10PassengersSeatedAfterOverlyPushingCustomers() {
+		
+		for(int i=0; i<300; i++) {
+			//Get different ComfortTypes
+			ComfortType ct = (i%2==0)?ComfortType.BUSINESS : ComfortType.ECONOMY;
+			Customer c = new Customer("Cust_"+i, "-");
+			Dish tempDish = new Dish(ct, "Dish_"+i, "Food", (i*100)%150+150);
+			fm.assignDishToCustomer(c, tempDish);
+			try {
+				fm.addCustomer(c, ct);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		assertEquals(10, fm.getNumberOfCustomers());
 	}
 	
 

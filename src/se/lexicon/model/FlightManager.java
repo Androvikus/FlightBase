@@ -51,6 +51,10 @@ public class FlightManager {
 		return airplane.getSeats().get(index);
 	}
 	
+	public int getNumberOfCustomers() {
+		return airplane.getNumberOfCustomers();
+	}
+	
 	//Food section
 	public boolean assignDishToCustomer(Customer customer, Dish dish) {
 

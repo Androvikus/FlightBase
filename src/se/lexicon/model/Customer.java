@@ -71,9 +71,10 @@ public class Customer {
 	}
 
 	/**
+	 * Package private to avoid UI to set dish unchecked (use FlightManager.assignDishToCustomer)
 	 * @param dish the dish to set
 	 */
-	public void setDish(Dish dish) {
+	void setDish(Dish dish) {
 		this.dish = dish;
 	}
 

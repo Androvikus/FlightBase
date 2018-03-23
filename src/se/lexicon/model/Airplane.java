@@ -116,4 +116,14 @@ public class Airplane {
 		return false;
 	}
 	
+	public int getNumberOfCustomers() {
+		int counter = 0;
+		for(Seat seat: seats) {
+			if(seat.getCustomer()!=null) {
+				counter++;
+			}
+		}
+		return counter;
+	}
+	
 }
