@@ -69,7 +69,6 @@ public class SystemUI {
 							comfortType = otherComfortType;
 						}
 						
-						//mark status
 					}
 					
 				}while(redo && (!businessClassFull || !economyClassFull));
@@ -146,91 +145,6 @@ public class SystemUI {
 		return comfortType;
 	}
 		
-		
-		
-		
-	/*
-	switch(choice) {
-		case 1:
-			//System.out.println("Choose comfort type");
-			try 
-			{
-				comfortType = enterComfortType(scannerGuard);
-			} 
-			catch (Exception e1) 
-			{
-				System.out.println("");
-			}
-			break;
-		case 2:
-			break;
-		}	
-	 */
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-/*
-		// Loop-condition
-		boolean isRunning = true;
-
-		// Try-with-resources to auto-close scanner on error or exit
-		try(Scanner scanner = new Scanner(System.in)) {
-
-			// Run at least once.
-			do {
-
-				// Inner loop error handling
-				try {
-
-					System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System");
-					String keyboard = scanner.next();
-
-					switch (keyboard) {
-
-						case "1":
-							System.out.println("Enter firstname:");
-							isRunning = false;
-							break;
-						case "2":
-							System.out.println("Exiting program...");
-							isRunning = false;
-							break;
-							
-						default:
-							System.out.println(keyboard + " is not a valid option. Please try again.");
-
-					}
-
-					// Catch any and all program-specific exceptions here to de-clutter your switch-case
-					// in case of checked and/or custom exceptions.
-
-				} catch (Exception e) {
-					System.out.println("Exception caught in inner try : " + e.getMessage());
-
-				}
-
-			} while (isRunning);
-
-		} catch (Exception e) {
-			System.out.println("Exception caught in outer try : " + e.getMessage());
-
-		} finally {
-
-			// Any tasks needed for cleaning up/saving/etc should be performed here.
-			// The scanner auto-closes so don't worry about that.
-
-		}
-*/
-	}
+}
 
 
