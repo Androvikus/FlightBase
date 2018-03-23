@@ -6,6 +6,8 @@ public class Seat {
 	private int price;
 	private int seatNumber;
 	
+	public static int seatCounter;
+	
 //	public Seat(Customer customer, ComfortType comfortType, int price) {
 //		super();
 //		this.customer = customer;
@@ -14,9 +16,10 @@ public class Seat {
 //	}
 	
 	public Seat(ComfortType comfortType, int price) {
-		super();
 		this.comfortType = comfortType;
 		this.price = price;
+		seatCounter++;
+		seatNumber = seatCounter;
 	}
 
 	/**
