@@ -71,7 +71,7 @@ public class FlightManager {
 
 				System.out.println("Customer " + customer  + " equals " + seat.getCustomer());
 				if(foodService.getDishesByComfortType(seat.getComfortType()).contains(dish)) {
-					System.out.println("Dish " + dish + " aterfanns i dishes med CT " + seat.getComfortType());
+					//System.out.println("Dish " + dish + " aterfanns i dishes med CT " + seat.getComfortType());
 					//Om foreslagen matratt finns Bland alla matratter som har samma ComfortType som kundens (sates) ComfortType
 					//Da godkanns tilldelning
 					customer.setDish(dish);
@@ -92,7 +92,7 @@ public class FlightManager {
 	public boolean assignDishToCustomerWithComfortType(Customer customer, Dish dish, ComfortType comfortType) {
 		
 		if(foodService.getDishesByComfortType(comfortType).contains(dish)) {
-			System.out.println("Dish " + dish + " aterfanns i dishes med CT " + comfortType);
+			//System.out.println("Dish " + dish + " aterfanns i dishes med CT " + comfortType);
 			//Om foreslagen matratt finns Bland alla matratter som har samma ComfortType som kundens (sates) ComfortType
 			//Da godkanns tilldelning
 			customer.setDish(dish);
