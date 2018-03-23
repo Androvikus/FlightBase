@@ -43,7 +43,7 @@ public class FoodService {
 		return dishes.stream().filter(d -> d.comfortType == comfortType).collect(Collectors.toList());
 	}
 	
-	//Ska kunna s�ka ut dishes p� valfritt vilkor... ej testad
+	//Ska kunna soka ut dishes pa valfritt vilkor... ej testad
 	public List<Dish> getDishByPredicate(Predicate<? super Dish> predicate){
 		return dishes.stream().filter(predicate).collect(Collectors.toList());
 	}

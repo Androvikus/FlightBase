@@ -66,8 +66,4 @@ public class Seat {
 		return "Seat [customer=" + customer + ", comfortType=" + comfortType + ", price=" + price + "]";
 	}
 
-	
-	
-	
-	
 }

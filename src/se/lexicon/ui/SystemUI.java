@@ -65,7 +65,7 @@ public class SystemUI {
 						//mark status
 					}
 					
-				}while(redo || (!businessClassFull || !economyClassFull));
+				}while(redo && (!businessClassFull || !economyClassFull));
 				}
 			 
 			catch (Exception e1) 
