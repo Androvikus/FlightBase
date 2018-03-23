@@ -104,6 +104,10 @@ public class Airplane {
 	public List<Seat> getSeats() {
 		return Collections.unmodifiableList(seats);
 	}
+	
+	public int getNumberOfSeats() {
+		return seats.size();
+	}
 
 	public boolean canPutCustomerOnDesiredSeatType(ComfortType desiredComfortType) {
 		Iterator<Seat> ite = seats.iterator();

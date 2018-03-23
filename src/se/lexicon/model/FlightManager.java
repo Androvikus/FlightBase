@@ -37,10 +37,17 @@ public class FlightManager {
 		return airplane.canPutCustomerOnDesiredSeatType(desiredComfortType);
 	}
 	
+	public int getNumberOfSeats() {
+		return airplane.getNumberOfSeats();
+	}
 	
 	public List<Seat> getAllSeats()
 	{
 		return Collections.unmodifiableList(airplane.getSeats());
+	}
+	
+	public int getNumberOfAvailableSeats() {
+		return getNumberOfSeats() - getNumberOfSeats();
 	}
 	
 	public List<Seat> getSeatsByComfortType(ComfortType comfortType){
