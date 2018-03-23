@@ -133,5 +133,10 @@ public class Test_180321 {
 		assertEquals(10, fm.getNumberOfCustomers());
 	}
 	
+	@Test
+	public void assertNumberOfAvailableSeatsIs9() {
+		assertEquals(9, fm.getNumberOfAvailableSeats());
+	}
+	
 
 }
