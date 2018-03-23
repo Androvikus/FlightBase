@@ -16,7 +16,7 @@ public class SystemUI {
 	Scanner scanner;
 	UIScannerGuard scannerGuard = new UIScannerGuard();
 	ComfortType comfortType;
-	Customer customer = new Customer();
+	//Customer customer = new Customer();
 	
 	// Start the applications UI
 	public void start() {
@@ -43,12 +43,13 @@ public class SystemUI {
 					Dish dish = chooseDish(scannerGuard);
 					
 					if(fm.canAddCustomer(comfortType)) {
+						Customer newCustomer = new Customer(firstname, Surname, dish);
 						//summary comfirm
 						
 						//add
 						System.out.println("Summary:\n");
-						fm.presentReceipt(customer, comfortType, new Seat(comfortType));
-						fm.addCustomer(new Customer(firstname,Surname,dish), comfortType);
+						fm.presentReceipt(newCustomer, comfortType, new Seat(comfortType));
+						fm.addCustomer(newCustomer, comfortType);
 					}
 					else {
 						//get another comfort type
