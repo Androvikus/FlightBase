@@ -8,8 +8,8 @@ import java.util.List;
 public class Airplane {
 	private List<Seat> seats;
 	private int maxNrSeats=10;
-	private int numberOfBusinessSeats=1;//TODO: byt till 5
-	private int numberOfEconomySeats=1;//TODO: byt till 5
+	private int numberOfBusinessSeats=5;//TODO: byt till 5
+	private int numberOfEconomySeats=5;//TODO: byt till 5
 	
 	/**
 	 * Also creates seats for the airplane

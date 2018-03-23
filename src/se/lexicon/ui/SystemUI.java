@@ -23,7 +23,7 @@ public class SystemUI {
 		
 		//Meny
 		int choice = 0;
-		int subChoice = 0;
+		//int subChoice = 0;
 		
 		System.out.println("Welcome to FlightBase Booking System \n" + "1. Book a flight \n" + "2. Exit Booking System \n");
 		
