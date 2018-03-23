@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import se.lexicon.exception.ExampleException;
 import se.lexicon.model.ComfortType;
+import se.lexicon.model.CountService;
 import se.lexicon.model.Customer;
 import se.lexicon.model.Dish;
 import se.lexicon.model.FlightManager;

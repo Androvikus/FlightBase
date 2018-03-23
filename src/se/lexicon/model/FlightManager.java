@@ -103,4 +103,8 @@ public class FlightManager {
 	}
 	
 	//end count section
+	
+	public void presentReceipt() {
+		//TODO: Call countService
+	}
 }
