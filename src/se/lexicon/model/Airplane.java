@@ -21,10 +21,10 @@ public class Airplane {
 	
 	//Create seats
 	private void createSeats() {
-		for(int i=0; i<5; i++) {
+		for(int i=0; i<1; i++) {
 			seats.add(new Seat(ComfortType.BUSINESS));
 		}
-		for(int i=0; i<5; i++) {
+		for(int i=0; i<1; i++) {
 			seats.add(new Seat(ComfortType.ECONOMY));
 		}
 	}
