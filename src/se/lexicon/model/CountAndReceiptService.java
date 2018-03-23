@@ -62,23 +62,30 @@ public class CountAndReceiptService {
 	}
 	
 	public void presentReceipt (Customer cust, ComfortType comfType, Seat seat) {
-		System.out.println("Your booking information");
-		System.out.println();
-		System.out.println("First name: " + cust.getFirstName() + "Surname" + cust.getSurname());
+		//System.out.println("Your booking information");
+		//System.out.println();
+		System.out.println("First name: " + cust.getFirstName() +"\n"+ "Surname: " + cust.getSurname());
 		System.out.println();
 		System.out.println("Comfort Type:  " + comfType);
 		System.out.println(); 
 		if(comfType == ComfortType.BUSINESS) {
-			System.out.println("Ticket price:" +  FlightManager.BUSINESS_PRICE + ": SEK ");
+			System.out.println("Ticket price: " +  FlightManager.BUSINESS_PRICE + ": SEK ");
 			System.out.println("Food price:" + cust.getDish().getPrice() +": SEK " );
 			System.out.print("Total:");  
-			System.out.println(FlightManager.BUSINESS_PRICE+cust.getDish().getPrice() +"SEK" );
+			System.out.println(FlightManager.BUSINESS_PRICE+cust.getDish().getPrice() +" SEK" );
+			System.out.println(); 
+			System.out.println(); 
+			
 		}
+		
 		else {		
-			System.out.println("Ticket price:" +  FlightManager.ECONOMY_PRICE + ": SEK ");
+			System.out.println("Ticket price: " +  FlightManager.ECONOMY_PRICE + ": SEK ");
 			System.out.println("Food price:" + cust.getDish().getPrice() +": SEK " );
 			System.out.print("Total:");  
-			System.out.println(FlightManager.ECONOMY_PRICE+cust.getDish().getPrice() +"SEK" );
+			System.out.println(FlightManager.ECONOMY_PRICE+cust.getDish().getPrice() +": SEK" );
+			System.out.println(); 
+			System.out.println(); 
+			
 
 	}	
 }
