@@ -17,7 +17,7 @@ public class FlightManager {
 	
 	Airplane airplane = new Airplane();
 	FoodService foodService = new FoodService();//Far matratter inskrivet
-	CountService countService = new CountService();
+	CountAndReceiptService countService = new CountAndReceiptService();
 	
 	public final static int BUSINESS_PRICE = 20000;
 	public final static int ECONOMY_PRICE = 5000;

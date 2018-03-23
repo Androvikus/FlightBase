@@ -3,13 +3,13 @@ package se.lexicon.model;
 import java.util.Iterator;
 import java.util.List;
 
-public class CountService {
+public class CountAndReceiptService {
 
 	private int foodAndTicketSum;
 	private int foodAndTicketSumPerCustomer;
 	private List<Seat> airplaneSeats;
 
-	public CountService() {
+	public CountAndReceiptService() {
 
 	}
 
@@ -60,4 +60,20 @@ public class CountService {
 
 		return foodAndTicketSumPerCustomer;
 	}
+	
+	public void presentReceipt (Customer cust, ComfortType comfType, Seat seat) {
+		System.out.println("Your booking information");
+		System.out.println();
+		System.out.println();
+		System.out.println("First name: " + cust.getFirstName() + "Surname" + cust.getSurname());
+		System.out.println();
+		System.out.println("Comfort Type:  " + comfType);
+		System.out.println(); 
+		System.out.println("Ticket price:" + seat.getPrice() + ": SEK ");
+		System.out.println("Food price:" + cust.getDish().getPrice() +": SEK " );
+		System.out.println(); 
+		System.out.println("Total:" + foodAndTicketSumPerCustomer +"SEK");
+	
+	
+	}	
 }
