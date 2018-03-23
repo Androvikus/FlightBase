@@ -29,7 +29,7 @@ public class SystemUI {
 		
 		System.out.println("Number of available seats are: " + fm.getNumberOfAvailableSeats());
 		
-		choice = scannerGuard.readInt("Ange en siffra: ");
+		choice = scannerGuard.readInt("Enter a number: ");
 		
 		switch(choice) {
 		case 1:
@@ -113,7 +113,7 @@ public class SystemUI {
 			}
 		}
 		
-		int choice = scannerGuard.readInt("Ange en siffra: ");
+		int choice = scannerGuard.readInt("Enter a number: ");
 		
 		
 		
