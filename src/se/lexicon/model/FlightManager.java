@@ -104,7 +104,8 @@ public class FlightManager {
 	
 	//end count section
 	
-	public void presentReceipt() {
+	public void presentReceipt(Customer cust, ComfortType comfType, Seat seat) {
 		//TODO: Call countService
+		countService.presentReceipt(cust, comfType, seat);
 	}
 }

@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 import se.lexicon.exception.ExampleException;
 import se.lexicon.model.ComfortType;
-import se.lexicon.model.CountService;
+import se.lexicon.model.CountAndReceiptService;
 import se.lexicon.model.Customer;
 import se.lexicon.model.Dish;
 import se.lexicon.model.FlightManager;
+import se.lexicon.model.Seat;
 import se.lexicon.model.UIScannerGuard;
 
 public class SystemUI {
@@ -45,6 +46,8 @@ public class SystemUI {
 						//summary comfirm
 						
 						//add
+						System.out.println("Summary:\n");
+						fm.presentReceipt(customer, comfortType, new Seat(comfortType));
 						fm.addCustomer(new Customer(firstname,Surname,dish), comfortType);
 					}
 					else {

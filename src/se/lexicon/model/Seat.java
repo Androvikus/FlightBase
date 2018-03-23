@@ -15,9 +15,23 @@ public class Seat {
 //		this.price = price;
 //	}
 	
-	public Seat(ComfortType comfortType, int price) {
+//	public Seat(ComfortType comfortType, int price) {
+//		this.comfortType = comfortType;
+//		this.price = price;
+//		seatCounter++;
+//		seatNumber = seatCounter;
+//	}
+	
+	public Seat(ComfortType comfortType){
 		this.comfortType = comfortType;
-		this.price = price;
+		
+		if(comfortType == ComfortType.BUSINESS) {
+			price = FlightManager.BUSINESS_PRICE;
+		}
+		else if(comfortType == ComfortType.ECONOMY) {
+			price = FlightManager.ECONOMY_PRICE;
+		}
+		
 		seatCounter++;
 		seatNumber = seatCounter;
 	}
