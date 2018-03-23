@@ -1,6 +1,6 @@
 package se.lexicon.ui;
 
-import com.sun.java_cup.internal.runtime.Scanner;
+
 
 import se.lexicon.model.FlightManager;
 import se.lexicon.model.UIScannerGuard;
@@ -20,6 +20,7 @@ public class SystemUIAdmin {
 		
 		System.out.println("");
 		System.out.println("Enter 1 for Total flight income enter 2 for Flight profit");
+		System.out.println(fm.getNumberOfAvailableSeats());
 		
 		choice = scannerGuard.readInt("Enter a number: ");
 		
@@ -27,7 +28,8 @@ public class SystemUIAdmin {
 		
 		case 1:
 			System.out.println("Total income from flight is:");
-		System.out.println(fm.getTotalFlightPrice();
+			
+			System.out.println(fm.getTotalFlightPrice(fm.getAllSeats()));
 		
 		
 		break;
@@ -35,6 +37,7 @@ public class SystemUIAdmin {
 		
 		case 2:
 			System.out.println("Flight Profit");
+			System.out.println(fm.countProfitPerFlight(fm.getAllSeats()));
 			
 			
 			
@@ -42,8 +45,8 @@ public class SystemUIAdmin {
 			
 			
 			
-		default
-		break;
+		//default
+		//break;
 		}
 		
 	}
