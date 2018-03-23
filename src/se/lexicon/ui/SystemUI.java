@@ -46,13 +46,14 @@ public class SystemUI {
 					Dish dish = chooseDish(scannerGuard);
 					
 					if(fm.canAddCustomer(comfortType)) {
+						System.out.println("YEEEEEEEEEES");
 						Customer newCustomer = new Customer(firstname, Surname, dish);
 						//summary comfirm
 						
 						//add
 						System.out.println("Summary:\n");
 						fm.presentReceipt(newCustomer, comfortType, new Seat(comfortType)); 
-						if(scannerGuard.readLine("Comfirm booking (Y/N)? ")=="y") {
+						if(scannerGuard.readLine("Comfirm booking (Y/N)? ").equalsIgnoreCase("y")) {
 							fm.addCustomer(newCustomer, comfortType);
 							
 						}
@@ -61,7 +62,7 @@ public class SystemUI {
 					else {
 						//get another comfort type
 						ComfortType otherComfortType = (comfortType==ComfortType.BUSINESS)?ComfortType.ECONOMY:ComfortType.BUSINESS;
-						String do_redo = scannerGuard.readLine("Do you want to search for " + otherComfortType + " (Y/N) ? ");
+						String do_redo = scannerGuard.readLine("Booking full. Do you want to search for " + otherComfortType + " (Y/N) ? ");
 					
 						if(comfortType==ComfortType.BUSINESS) {
 							businessClassFull=true;
