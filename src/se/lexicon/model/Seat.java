@@ -4,6 +4,9 @@ public class Seat {
 	private Customer customer;
 	private ComfortType comfortType;
 	private int price;
+	private int seatNumber;
+	
+	public static int seatCounter;
 	
 //	public Seat(Customer customer, ComfortType comfortType, int price) {
 //		super();
@@ -13,9 +16,10 @@ public class Seat {
 //	}
 	
 	public Seat(ComfortType comfortType, int price) {
-		super();
 		this.comfortType = comfortType;
 		this.price = price;
+		seatCounter++;
+		seatNumber = seatCounter;
 	}
 
 	/**
@@ -62,8 +66,4 @@ public class Seat {
 		return "Seat [customer=" + customer + ", comfortType=" + comfortType + ", price=" + price + "]";
 	}
 
-	
-	
-	
-	
 }

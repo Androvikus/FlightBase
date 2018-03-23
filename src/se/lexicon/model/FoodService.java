@@ -11,7 +11,7 @@ public class FoodService {
 
 	public FoodService() {
 		super();
-		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote with sponge", "Fried by master chef", 345);
+		Dish dish1 = new Dish(ComfortType.BUSINESS, "Entrecote with mushroom", "Fried by master chef", 345);
 		Dish dish2 = new Dish(ComfortType.BUSINESS, "Haddock", "With Russian caviar from the Black Sea", 359);
 		Dish dish3 = new Dish(ComfortType.BUSINESS, "Finnish rotfruit box, eco", "Hand picked root vegetables", 375);
 		
@@ -43,7 +43,7 @@ public class FoodService {
 		return dishes.stream().filter(d -> d.comfortType == comfortType).collect(Collectors.toList());
 	}
 	
-	//Ska kunna s�ka ut dishes p� valfritt vilkor... ej testad
+	//Ska kunna soka ut dishes pa valfritt vilkor... ej testad
 	public List<Dish> getDishByPredicate(Predicate<? super Dish> predicate){
 		return dishes.stream().filter(predicate).collect(Collectors.toList());
 	}
